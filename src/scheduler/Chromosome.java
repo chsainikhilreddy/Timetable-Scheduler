@@ -53,19 +53,12 @@ public class Chromosome implements Comparable<Chromosome>,Serializable{
 			
 			for(int j=0;j<nostgrp;j++){
 			
-				Slot slot;
+				Slot slot=TimeTable.slot[gene[j].slotno[i]]!=null;
 				//System.out.println("i="+i+" j="+j);
-				if(TimeTable.slot[gene[j].slotno[i]]!=null)
-					slot=TimeTable.slot[gene[j].slotno[i]];
-				else slot=null;
-
-				if(slot!=null){
-				
-					if(teacherlist.contains(slot.teacherid)){
+				if(teacherlist.contains(slot.teacherid)){
 						point++;
 					}
-					else teacherlist.add(slot.teacherid);
-				}
+				else teacherlist.add(slot.teacherid);
 			}	
 			
 			
