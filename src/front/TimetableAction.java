@@ -10,15 +10,14 @@ import scheduler.*;
 public class TimetableAction extends ActionSupport implements ServletRequestAware {
 
 	HttpServletRequest request;
-	List<String> start, end;
-	List<String> studentgroup, nosubject, stgrpsubject, subjecttime;
-	List<String> teacher, teachersubject;
+	List<String> start, end, studentgroup, nosubject, stgrpsubject, subjecttime, teacher, teachersubject;
 	String hoursperday, breakstart, breakend, daysperweek;
 	int cumusubcount = 0;
 
 	public String fromFile(){
 		//invokes method to take input
-		new inputdata().takeinput();
+		inputdata obj = new inputdata();
+		obj.takeinput();
 		
 		//invokes algorithm
 		new SchedulerMain();
